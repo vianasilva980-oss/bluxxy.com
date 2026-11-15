@@ -61,7 +61,13 @@ a { color: var(--accent-2); }
 .mobile-nav.open { display: flex; }
 
 /* Hero */
-.hero { padding: 64px 0 40px; }
+.hero { position: relative; overflow: hidden; padding: 64px 0 130px; background: linear-gradient(180deg, transparent 40%, rgba(22, 120, 239, .10)); }
+.hero > .container { position: relative; z-index: 1; }
+/* Maré viva: duas ondas que se movem no pé do topo (mesma animação do app) */
+.mare { position: absolute; left: 0; right: 0; bottom: 0; height: 110px; z-index: 0; pointer-events: none; }
+.mare svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.mare .tras { fill: #2f9fb0; opacity: .35; }
+.mare .frente { fill: var(--bg); }
 .hero-grid {
   display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center;
 }
@@ -133,15 +139,33 @@ h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.1; margin: 0 0 14px; }
 .notice-box li { margin: 6px 0; }
 
 /* Buttons */
+/* Botões do app: pílula, brilho, toque que afunda e água que sobe no hover (igual aos filtros do Radar) */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 12px 18px; border-radius: 12px; text-decoration: none; font-weight: 600;
-  border: 1px solid var(--line); transition: transform .08s ease, filter .15s ease;
+  position: relative; isolation: isolate; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 0 22px; border-radius: 999px; text-decoration: none; font-weight: 800;
+  border: 1px solid var(--line);
+  transition: transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s ease, color .3s .1s, border-color .2s ease;
 }
-.btn:hover { filter: brightness(1.08); }
-.btn:active { transform: translateY(1px); }
-.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn::before {
+  content: ""; position: absolute; left: -2px; right: -2px; bottom: -14px; height: 0; z-index: -1;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5Q10 0 20 5T40 5V10H0Z' fill='%2335d8f5'/%3E%3C/svg%3E") 0 0 / 40px 10px repeat-x,
+    linear-gradient(#35d8f5, #35d8f5) 0 9px / 100% 100% no-repeat;
+  transition: height .7s cubic-bezier(.3,.7,.2,1), bottom .3s ease;
+}
+.btn:hover::before, .btn:focus-visible::before { height: 86%; bottom: 0; animation: onda-btn 1.3s linear infinite; }
+.btn:hover, .btn:focus-visible { color: #04243a; border-color: transparent; }
+.btn:active { transform: scale(.965); }
+.btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@keyframes onda-btn { to { background-position: 40px 0, 0 9px; } }
+.btn-primary { background: linear-gradient(100deg, #48e2ec, #2997f3); border-color: transparent; color: #04182c; box-shadow: 0 8px 22px rgba(24, 172, 226, .28); }
+.btn-primary:hover { box-shadow: 0 10px 28px rgba(24, 172, 226, .4); }
+.btn-primary::before { filter: brightness(1.25) saturate(.7); }
 .btn-ghost { background: var(--surface); color: var(--fg); }
+.nav-cta { transition: transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s ease !important; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(24, 172, 226, .35); }
+.nav-cta:active { transform: scale(.96); }
 
 .info-strip {
   display: grid; grid-template-columns: 1.3fr .7fr; gap: 20px; align-items: start;
@@ -204,3 +228,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .toc a { text-decoration: none; }
 .page-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; margin: 18px 0; }
 @media (max-width: 720px) { .toc ul { columns: 1; } }
+
+/* cartões sobem de leve ao passar o mouse */
+.card, .feature { transition: transform .25s cubic-bezier(.2,.8,.2,1), border-color .25s ease, box-shadow .25s ease; }
+.card:hover, .feature:hover { transform: translateY(-3px); border-color: rgba(53, 216, 245, .35); box-shadow: 0 14px 30px rgba(0, 0, 0, .3); }
+@media (prefers-reduced-motion: reduce) {
+  .btn::before, .btn:hover::before { animation: none; transition: none; }
+  .card, .feature, .btn { transition: none; }
+}
