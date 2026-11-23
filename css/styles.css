@@ -236,3 +236,68 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .btn::before, .btn:hover::before { animation: none; transition: none; }
   .card, .feature, .btn { transition: none; }
 }
+
+/* Downloads em 4 colunas */
+.download-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.dl-meta a { color: var(--accent-2); }
+
+/* Planos e preços */
+.planos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.plano { display: flex; flex-direction: column; gap: 8px; }
+.plano ul { margin: 6px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+.plano li { margin: 4px 0; }
+.plano-tag {
+  align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase;
+  color: var(--accent-2); border: 1px solid rgba(53,216,245,.35); padding: 3px 10px; border-radius: 999px;
+}
+.preco { font-size: 26px; font-weight: 800; color: var(--fg) !important; margin: 2px 0 0 !important; line-height: 1.2; }
+.preco small { font-size: 14px; font-weight: 600; color: var(--muted); }
+.preco-alt { font-size: 14px; margin: 0 !important; }
+.plano-destaque { border-color: rgba(53,216,245,.55); background: linear-gradient(180deg, rgba(53,216,245,.10), rgba(22,120,239,.05)); }
+.plano-gratis .preco { color: var(--ok) !important; }
+
+/* Pix */
+.apoie { display: grid; grid-template-columns: 1.3fr .7fr; gap: 28px; align-items: center; }
+.passos { color: var(--muted); padding-left: 20px; margin: 0 0 16px; }
+.passos li { margin: 6px 0; }
+.pix-chave { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; align-items: center; margin: 0 0 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.pix-rotulo { grid-column: 1 / -1; font-size: 13px; color: var(--muted); font-weight: 600; }
+.pix-chave code { background: none; padding: 0; font-size: 14px; word-break: break-all; }
+.pix-copia { font-size: 12px !important; color: var(--muted) !important; max-height: 3.2em; overflow: hidden; }
+.btn-sm { min-height: 36px; padding: 0 14px; font-size: 14px; white-space: nowrap; }
+.btn.copiado { color: #04243a; background: var(--ok); border-color: transparent; }
+.pix-qr { margin: 0; justify-self: center; text-align: center; }
+.pix-qr img { width: 240px; height: 240px; padding: 12px; background: #fff; border-radius: 18px; box-shadow: 0 0 0 6px rgba(53,216,245,.18), var(--shadow); }
+.pix-qr figcaption { margin-top: 12px; color: var(--muted); font-size: 14px; }
+
+/* Redes */
+.redes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.rede { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--fg); }
+.rede strong { display: block; }
+.rede small { color: var(--muted); font-size: 14px; }
+.rede-icone { width: 46px; height: 46px; flex: none; border-radius: 14px; display: grid; place-items: center; background: rgba(53,216,245,.12); color: var(--accent-2); }
+.rede-icone svg { width: 24px; height: 24px; }
+
+/* Investidores */
+.investidores { display: grid; grid-template-columns: 1.4fr .6fr; gap: 24px; align-items: center; padding: 28px;
+  background: linear-gradient(120deg, rgba(22,120,239,.16), rgba(53,216,245,.06)); border-color: rgba(53,216,245,.35); }
+.investidores h2 { margin: 10px 0 10px; font-size: clamp(24px, 3vw, 30px); }
+.investidores p { margin: 0 0 8px; }
+.investidores-acoes { display: flex; flex-direction: column; gap: 10px; }
+.footer-redes { display: flex; flex-wrap: wrap; gap: 14px; }
+.footer-redes a { color: var(--muted); text-decoration: none; }
+.footer-redes a:hover { color: var(--fg); }
+
+@media (max-width: 1100px) {
+  .planos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .download-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .apoie, .investidores, .redes { grid-template-columns: 1fr; }
+  .planos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pix-qr { order: -1; }
+}
+@media (max-width: 560px) {
+  .planos, .download-grid.four { grid-template-columns: 1fr; }
+  .pix-chave { grid-template-columns: 1fr; }
+}

@@ -9,7 +9,8 @@ Este repositório contém a página estática do [bluxxy.com](https://bluxxy.com
 - `index.html` — página inicial (resumo do BLUXXY e downloads)
 - `privacidade.html` — Política de Privacidade
 - `termos.html` — Termos de Uso
-- `diretrizes.html` — Diretrizes da Comunidade e Segurança
+- `diretrizes.html` — Diretrizes da Comunidade e Segurança (inclui a política CSAE em `#csae`)
+- `excluir-conta.html` — como excluir a conta (link usado pelo app e pela Google Play)
 - `inclusao-saude.html` — Inclusão, Saúde e Bem-estar
 - `css/styles.css` — estilos
 - `js/main.js` — scripts (menu mobile, ano do rodapé)
@@ -18,13 +19,20 @@ Este repositório contém a página estática do [bluxxy.com](https://bluxxy.com
 
 ## Downloads
 
-Coloque os instaladores/executáveis na pasta `downloads/` com os nomes usados na página (ou ajuste os links em `index.html`):
+Os instaladores **não ficam neste repositório** (os arquivos passam do limite de tamanho). Eles são publicados no
+[GitHub Releases](https://github.com/vianasilva980-oss/bluxxy.com/releases) com nomes fixos, e os botões do site apontam para
+`releases/latest/download/<nome>`:
 
-- `downloads/BLUXXY-Setup.exe` — Windows
-- `downloads/bluxxy.deb` — Linux (Debian/Ubuntu)
-- `downloads/bluxxy.apk` — Android
+- `BLUXXY-Setup.exe` — Windows
+- `bluxxy.deb` — Linux (Debian/Ubuntu)
+- `bluxxy.apk` — Android
+- `SHA256SUMS.txt` — conferência dos arquivos
 
-> Observação: binários grandes podem exigir Git LFS ou publicação dos artefatos em outro local (ex.: GitHub Releases) com atualização dos links.
+Para gerar e publicar tudo (instaladores + site), na pasta do projeto BLUXXY:
+
+```bash
+bash scripts/publicar-site.sh
+```
 
 ## Publicar no GitHub
 

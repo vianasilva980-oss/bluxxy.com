@@ -33,6 +33,18 @@
     if (window.IntersectionObserver) new IntersectionObserver(function (e) { visivel = e[0].isIntersecting; if (visivel && !raf && !reduz.matches) raf = requestAnimationFrame(quadro); }).observe(svg);
   }
 
+  // botões "Copiar" do Pix
+  document.querySelectorAll('[data-copiar]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var alvo = document.getElementById(b.getAttribute('data-copiar'));
+      if (!alvo) return;
+      var texto = alvo.textContent.trim(), orig = b.textContent;
+      var ok = function () { b.textContent = 'Copiado!'; b.classList.add('copiado'); setTimeout(function () { b.textContent = orig; b.classList.remove('copiado'); }, 1800); };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(texto).then(ok, function () {});
+      else { var t = document.createElement('textarea'); t.value = texto; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); ok(); } catch (e) {} t.remove(); }
+    });
+  });
+
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
