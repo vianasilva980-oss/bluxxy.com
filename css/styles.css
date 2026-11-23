@@ -301,3 +301,99 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .planos, .download-grid.four { grid-template-columns: 1fr; }
   .pix-chave { grid-template-columns: 1fr; }
 }
+
+/* ===================== celular (navegador do telefone) ===================== */
+.notice-box summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.notice-box summary::-webkit-details-marker { display: none; }
+.notice-box summary h3 { margin: 0; }
+.notice-box summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--accent-2); }
+.notice-box[open] summary::after { content: "–"; }
+.notice-box[open] summary { margin-bottom: 10px; }
+.dl-iphone { margin: 18px 0 0; padding: 12px 14px; border-radius: 14px; border: 1px dashed var(--line); color: var(--muted); font-size: 14px; }
+.dl-recomendado { outline: 2px solid rgba(53,216,245,.65); outline-offset: 2px; }
+.dl-tag-aqui { display: none; }
+.dl-recomendado .dl-tag-aqui { display: inline-block; margin-left: 6px; font-size: 11px; font-weight: 700; color: var(--accent-2); text-transform: uppercase; letter-spacing: .4px; }
+.deslize { display: none; }
+
+@media (max-width: 640px) {
+  body { font-size: 15.5px; }
+  .container { width: calc(100% - 32px); }
+  .site-header .header-inner { min-height: 58px; }
+  .mobile-nav { padding: 6px 16px 14px; }
+  .mobile-nav a { padding: 12px 4px; border-bottom: 1px solid rgba(30,51,82,.5); font-size: 16px; }
+  .mobile-nav a:last-child { border-bottom: 0; }
+
+  /* topo enxuto: farol pequeno ao lado do texto, título menor, botões lado a lado */
+  .hero { padding: 22px 0 84px; }
+  .hero-grid { gap: 0; }
+  .hero-visual { min-height: 0; height: 104px; width: 104px; margin: 0 0 6px; order: -1; justify-self: start; }
+  .orb { width: 104px; height: 104px; }
+  .hero-logo { width: 72px; }
+  h1 { font-size: 29px; line-height: 1.15; margin-bottom: 10px; }
+  .lead { font-size: 16px; margin-bottom: 18px; }
+  .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 6px; }
+  .hero-badges { display: none; }
+  .hero-actions .btn { width: 100%; padding: 0 10px; min-height: 48px; font-size: 15px; }
+  .hero-badges { gap: 6px; }
+  .hero-badges li { padding: 5px 10px; font-size: 12.5px; }
+  .mare { height: 70px; }
+
+  .section { padding: 34px 0; }
+  .section-head { margin-bottom: 16px; }
+  .section-head h2 { font-size: 24px; }
+  .section-head p { font-size: 15px; }
+  .card { padding: 18px; border-radius: 16px; }
+
+  /* listas longas viram carrossel de deslizar para o lado */
+  .carrossel { display: flex !important; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    margin: 0 -16px; padding: 2px 16px 10px; scrollbar-width: none; }
+  .carrossel::-webkit-scrollbar { display: none; }
+  .carrossel > * { flex: 0 0 82%; scroll-snap-align: center; }
+  .features.carrossel > * { flex-basis: 68%; }
+  .deslize { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 6px; color: var(--muted); font-size: 12.5px; }
+  .deslize::after { content: "→"; }
+
+  /* downloads compactos: título, versão e botão */
+  .download-grid.four { gap: 10px; }
+  .download-card { gap: 10px; padding: 16px; }
+  .download-card .dl-top p { display: none; }
+  .download-card .dl-top h3 { margin: 0; font-size: 18px; }
+  .dl-badge { margin-bottom: 6px; font-size: 11px; }
+  .dl-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; }
+  .dl-meta li { margin: 0; }
+  .download-card .btn { min-height: 46px; }
+  .download-card[data-plat="windows"] .dl-note, .download-card[data-plat="linux"] .dl-note { display: none; }
+  .notice-box { padding: 14px 16px; }
+  .notice-box ul { padding-left: 18px; font-size: 14px; }
+
+  /* planos */
+  .preco { font-size: 24px; }
+
+  /* Pix */
+  .pix-qr img { width: 200px; height: 200px; }
+  .pix-chave { padding: 10px 12px; }
+  .pix-chave code { font-size: 12.5px; }
+  .pix-chave .btn-sm { width: 100%; }
+
+  /* comunidade e investidores */
+  .redes { gap: 10px; }
+  .rede { padding: 14px 16px; }
+  .investidores { padding: 20px; gap: 16px; }
+  .investidores h2 { font-size: 22px; }
+  .investidores-acoes .btn { width: 100%; }
+
+  .info-links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .info-links a { padding: 10px 12px; font-size: 14px; }
+  .footer-inner { gap: 14px; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+
+  /* páginas de texto */
+  .page-hero { padding: 26px 0 20px; }
+  .page-hero h1 { font-size: 27px; }
+  .prose { font-size: 15.5px; }
+  .prose h2 { font-size: 20px; margin-top: 26px; }
+  .prose h3 { font-size: 17px; }
+  .toc { padding: 14px 16px; }
+  .toc ul { padding-left: 18px; }
+  .callout { padding: 14px 16px; font-size: 15px; }
+}

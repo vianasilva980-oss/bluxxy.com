@@ -45,6 +45,16 @@
     });
   });
 
+  // destaca o download certo para o aparelho de quem visita (e avisa no iPhone)
+  var ua = navigator.userAgent || '';
+  var plat = /Android/i.test(ua) ? ['play', 'apk'] : /iPhone|iPad|iPod/i.test(ua) ? [] : /Windows/i.test(ua) ? ['windows'] : /Linux|X11/i.test(ua) ? ['linux'] : [];
+  plat.forEach(function (p) { var c = document.querySelector('.download-card[data-plat="' + p + '"]'); if (c) c.classList.add('dl-recomendado'); });
+  if (/iPhone|iPad|iPod/i.test(ua)) { var ip = document.getElementById('dlIphone'); if (ip) ip.hidden = false; }
+  if (plat[0] === 'windows' || plat[0] === 'linux') {
+    var g = document.getElementById('downloads'), c0 = g && g.querySelector('.download-card[data-plat="' + plat[0] + '"]');
+    if (g && c0) g.insertBefore(c0, g.firstChild);
+  }
+
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();

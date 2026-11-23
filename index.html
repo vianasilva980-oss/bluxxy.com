@@ -78,7 +78,7 @@
           <h2>Sobre o BLUXXY</h2>
           <p>Um resumo do que é o BLUXXY e como ele foi pensado.</p>
         </div>
-        <div class="cards two">
+        <div class="cards two carrossel">
           <article class="card">
             <h3>O que é</h3>
             <p>BLUXXY é uma plataforma de conexões por proximidade para adultos (18+). Você navega pelo mar com a sua embarcação, encontra tripulantes no radar, participa de ilhas (grupos) e publica na Praia.</p>
@@ -96,6 +96,7 @@
             <p>Use no celular (Android) e no computador (Windows e Linux). No computador, você entra lendo um QR Code com o celular.</p>
           </article>
         </div>
+        <p class="deslize">Deslize para ver mais</p>
       </div>
     </section>
 
@@ -105,7 +106,7 @@
           <h2>Recursos em destaque</h2>
           <p>Principais pilares da experiência BLUXXY.</p>
         </div>
-        <div class="features">
+        <div class="features carrossel">
           <div class="feature">
             <div class="feature-icon">◎</div>
             <h3>Radar e proximidade</h3>
@@ -127,6 +128,7 @@
             <p>Instalador para Windows, pacote .deb para Linux, APK para Android e teste pela Google Play.</p>
           </div>
         </div>
+        <p class="deslize">Deslize para ver mais</p>
       </div>
     </section>
 
@@ -136,10 +138,10 @@
           <h2>Download</h2>
           <p>Escolha a versão do BLUXXY para o seu aparelho. Os arquivos ficam na página de versões do projeto no GitHub e o botão sempre baixa a versão mais recente.</p>
         </div>
-        <div class="download-grid four">
-          <article class="card download-card">
+        <div class="download-grid four" id="downloads">
+          <article class="card download-card" data-plat="play">
             <div class="dl-top">
-              <span class="dl-badge">Android · Google Play</span>
+              <span class="dl-badge">Android · Google Play</span><span class="dl-tag-aqui">Para o seu celular</span>
               <h3>Teste na Google Play</h3>
               <p>Instale pela loja oficial, com atualizações automáticas e verificação de idade pela Google Play.</p>
             </div>
@@ -151,42 +153,42 @@
             <p class="dl-note">Abra o link no celular, com a conta Google cadastrada, e toque em <em>Tornar-se testador</em>.</p>
           </article>
 
-          <article class="card download-card">
+          <article class="card download-card" data-plat="apk">
             <div class="dl-top">
-              <span class="dl-badge">Android</span>
+              <span class="dl-badge">Android</span><span class="dl-tag-aqui">Para o seu celular</span>
               <h3>Aplicativo .apk</h3>
               <p>Instalação direta no celular, sem passar pela loja.</p>
             </div>
             <ul class="dl-meta">
-              <li><strong>Versão:</strong> 1.4</li>
+              <li><strong>Versão:</strong> 1.5</li>
               <li><strong>Requer:</strong> Android 7.0 ou mais novo</li>
             </ul>
             <a class="btn btn-primary btn-block" href="https://github.com/vianasilva980-oss/bluxxy.com/releases/latest/download/bluxxy.apk">Baixar para Android (.apk)</a>
             <p class="dl-note">Quem instalou pela Google Play não precisa do APK.</p>
           </article>
 
-          <article class="card download-card">
+          <article class="card download-card" data-plat="windows">
             <div class="dl-top">
-              <span class="dl-badge">Windows</span>
+              <span class="dl-badge">Windows</span><span class="dl-tag-aqui">Para este computador</span>
               <h3>Instalador .exe</h3>
               <p>Para Windows 10 e 11 (64 bits). Baixe e execute o instalador.</p>
             </div>
             <ul class="dl-meta">
-              <li><strong>Versão:</strong> 0.4.0</li>
+              <li><strong>Versão:</strong> 0.5.0</li>
               <li><strong>Plataforma:</strong> Windows x64</li>
             </ul>
             <a class="btn btn-primary btn-block" href="https://github.com/vianasilva980-oss/bluxxy.com/releases/latest/download/BLUXXY-Setup.exe">Baixar para Windows (.exe)</a>
             <p class="dl-note">Entre lendo o QR Code com o app do celular.</p>
           </article>
 
-          <article class="card download-card">
+          <article class="card download-card" data-plat="linux">
             <div class="dl-top">
-              <span class="dl-badge">Linux</span>
+              <span class="dl-badge">Linux</span><span class="dl-tag-aqui">Para este computador</span>
               <h3>Pacote .deb</h3>
               <p>Para Debian, Ubuntu, Linux Mint e derivados (64 bits).</p>
             </div>
             <ul class="dl-meta">
-              <li><strong>Versão:</strong> 0.4.0</li>
+              <li><strong>Versão:</strong> 0.5.0</li>
               <li><strong>Plataforma:</strong> Linux amd64</li>
             </ul>
             <a class="btn btn-primary btn-block" href="https://github.com/vianasilva980-oss/bluxxy.com/releases/latest/download/bluxxy.deb">Baixar para Linux (.deb)</a>
@@ -194,15 +196,16 @@
           </article>
         </div>
 
-        <div class="notice-box">
-          <h3>Observações de instalação</h3>
+        <p class="dl-iphone" id="dlIphone" hidden>No iPhone o BLUXXY ainda não está disponível. Entre no <a href="#comunidade">grupo</a> para saber quando sair.</p>
+        <details class="notice-box">
+          <summary><h3>Observações de instalação</h3></summary>
           <ul>
             <li><strong>Windows:</strong> o instalador ainda não tem assinatura digital. Se o SmartScreen avisar, clique em <em>Mais informações</em> e depois em <em>Executar assim mesmo</em>. Baixe sempre por este site.</li>
             <li><strong>Linux:</strong> instale pela central de programas ou com <code>sudo apt install ./bluxxy.deb</code>.</li>
             <li><strong>Android (.apk):</strong> o celular pede para permitir a instalação pelo navegador. Para trocar o APK pela versão da Google Play, desinstale o APK antes.</li>
             <li>A conferência dos arquivos (SHA-256) fica no arquivo <a href="https://github.com/vianasilva980-oss/bluxxy.com/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>.</li>
           </ul>
-        </div>
+        </details>
       </div>
     </section>
 
@@ -212,7 +215,7 @@
           <h2>Planos e preços</h2>
           <p>O BLUXXY é gratuito. Os itens pagos abaixo chegam em breve ao app Android, com pagamento pela Google Play. Os valores podem mudar e o preço que vale é o mostrado na Google Play na hora da compra.</p>
         </div>
-        <div class="planos">
+        <div class="planos carrossel">
           <article class="card plano plano-gratis">
             <span class="plano-tag">Grátis</span>
             <h3>Para todo mundo</h3>
@@ -265,6 +268,7 @@
             </ul>
           </article>
         </div>
+        <p class="deslize">Deslize para ver mais</p>
       </div>
     </section>
 
