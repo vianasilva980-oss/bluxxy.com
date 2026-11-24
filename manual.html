@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manual do BLUXXY — como usar cada função do app</title>
+  <meta name="description" content="Manual completo do BLUXXY: radar, embarcações, ondas, Praia, Maré do dia, conversas, ilhas, perfil, privacidade, permissões, planos e pagamentos. Com tour guiado interativo." />
+  <meta name="theme-color" content="#060f1d" />
+  <meta property="og:title" content="Manual do BLUXXY" />
+  <meta property="og:description" content="Tudo o que o app faz, tela por tela, com tour guiado interativo." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.bluxxy.com/manual.html" />
+  <meta property="og:image" content="https://www.bluxxy.com/assets/manual/cel-inicio.webp" />
+  <link rel="icon" href="assets/icone-bluxxy-48.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/icone-bluxxy-192.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/manual.css" />
+</head>
+<body class="manual">
+  <div class="leitura" aria-hidden="true"><i id="leitura"></i></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="BLUXXY — página inicial">
+        <img src="assets/farol-branco.png" alt="Logo BLUXXY" class="brand-logo" />
+        <span class="brand-name">BLUXXY</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html#sobre">Sobre</a>
+        <a href="manual.html" aria-current="page">Manual</a>
+        <a href="index.html#planos">Planos</a>
+        <a href="index.html#comunidade">Comunidade</a>
+        <a href="index.html#download" class="nav-cta">Download</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menu">☰</button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu móvel">
+      <a href="index.html">Início do site</a>
+      <a href="manual.html">Manual</a>
+      <a href="index.html#download">Download</a>
+      <a href="index.html#planos">Planos e preços</a>
+      <a href="index.html#comunidade">Comunidade</a>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="termos.html">Termos</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======================= TOPO ======================= -->
+    <section class="m-hero">
+      <div class="container m-hero-grid">
+        <div>
+          <p class="eyebrow">Manual do BLUXXY</p>
+          <h1>Tudo o que o app faz, <span class="grad">tela por tela</span></h1>
+          <p class="lead">Do primeiro acesso aos planos pagos: como navegar no mar, mandar ondas, conversar, entrar em ilhas, cuidar da sua privacidade e para que serve cada botão. Toque nos pontos numerados das telas para ver a explicação de cada um.</p>
+          <div class="m-busca" role="search">
+            <span aria-hidden="true">⌕</span>
+            <input id="m-busca" type="search" placeholder="Busque: onda, ilha, áudio, modo fantasma, pagamento…" aria-label="Buscar no manual" autocomplete="off" />
+            <kbd>/</kbd>
+          </div>
+          <ul class="m-busca-res" id="m-busca-res" hidden></ul>
+          <div class="hero-actions">
+            <button class="btn btn-primary" type="button" data-abrir-tour>▶ Começar o tour guiado</button>
+            <a class="btn btn-ghost" href="#primeiros-passos">Ler do começo</a>
+          </div>
+          <ul class="m-atalhos" aria-label="Atalhos">
+            <li><a href="#radar">◎ Radar</a></li><li><a href="#ondas">🌊 Ondas</a></li><li><a href="#conversas">💬 Conversas</a></li>
+            <li><a href="#ilhas">🏝 Ilhas</a></li><li><a href="#perfil">👤 Perfil</a></li><li><a href="#pagamentos">💳 Pagamentos</a></li>
+          </ul>
+        </div>
+        <div class="m-hero-cel" aria-hidden="true">
+          <div class="cel-3d">
+            <div class="cel-moldura"><div class="cel-tela cel-slides" id="hero-slides">
+              <img src="assets/manual/cel-inicio.webp" alt="" class="on" width="585" height="1266" />
+              <img src="assets/manual/cel-praia.webp" alt="" width="585" height="1266" loading="lazy" />
+              <img src="assets/manual/cel-conversa.webp" alt="" width="585" height="1266" loading="lazy" />
+              <img src="assets/manual/cel-ilhas.webp" alt="" width="585" height="1266" loading="lazy" />
+              <img src="assets/manual/cel-perfil.webp" alt="" width="585" height="1266" loading="lazy" />
+            </div></div>
+          </div>
+          <div class="m-bolha b1">🌊 Nova onda de Bruno</div>
+          <div class="m-bolha b2">🏝 Galera do Mar · 3 novas</div>
+        </div>
+      </div>
+      <div class="mare" aria-hidden="true"><svg id="mare" preserveAspectRatio="none"><path class="tras" /><path class="frente" /></svg></div>
+    </section>
+
+    <div class="container m-corpo">
+      <!-- ======================= SUMÁRIO ======================= -->
+      <aside class="m-sumario" id="m-sumario" aria-label="Sumário do manual">
+        <button class="m-sumario-btn" type="button" id="m-sumario-btn" aria-expanded="false">☰ Sumário <span id="m-sumario-atual"></span></button>
+        <nav id="m-sumario-nav">
+          <a href="#tour">▶ Tour guiado</a>
+          <a href="#primeiros-passos">1. Primeiros passos</a>
+          <a href="#computador">2. No computador</a>
+          <a href="#radar">3. Início: mar e radar</a>
+          <a href="#embarcacoes">4. Embarcações e níveis</a>
+          <a href="#cartao">5. Cartão do tripulante</a>
+          <a href="#ondas">6. Ondas e conexões</a>
+          <a href="#explorar">7. Explorar e modo fantasma</a>
+          <a href="#praia">8. Praia e Maré do dia</a>
+          <a href="#atividades">9. Atividades</a>
+          <a href="#conversas">10. Conversas</a>
+          <a href="#ilhas">11. Ilhas</a>
+          <a href="#perfil">12. Seu perfil</a>
+          <a href="#privacidade">13. Privacidade e segurança</a>
+          <a href="#permissoes">14. Permissões do celular</a>
+          <a href="#pagamentos">15. Planos e pagamentos</a>
+          <a href="#glossario">16. Glossário do mar</a>
+          <a href="#problemas">17. Problemas comuns</a>
+          <a href="#faq">18. Perguntas frequentes</a>
+        </nav>
+      </aside>
+
+      <div class="m-conteudo">
+        <!-- ======================= TOUR GUIADO ======================= -->
+        <section id="tour" class="m-sec m-tour" aria-labelledby="tour-t">
+          <div class="m-sec-cab"><span class="m-num">▶</span><div><h2 id="tour-t">Tour guiado</h2><p>Um passeio pelo app de verdade, botão por botão. Use as setas, toque em <b>Próximo</b> ou deixe no automático.</p></div></div>
+          <div class="tour-palco" id="tour-palco">
+            <div class="tour-cel">
+              <div class="cel-moldura"><div class="cel-tela" id="tour-tela">
+                <img id="tour-img" src="assets/manual/cel-entrar.webp" alt="Tela do app no passo atual do tour" width="585" height="1266" />
+                <div class="tour-luz" id="tour-luz" hidden></div>
+              </div></div>
+            </div>
+            <div class="tour-lado">
+              <p class="tour-cont" id="tour-cont">Passo 1 de 20</p>
+              <h3 id="tour-titulo">Entrar no BLUXXY</h3>
+              <p id="tour-texto">Carregando…</p>
+              <div class="tour-barra" aria-hidden="true"><i id="tour-barra"></i></div>
+              <div class="tour-ctl">
+                <button type="button" class="btn btn-ghost" id="tour-ant" aria-label="Passo anterior">←</button>
+                <button type="button" class="btn btn-ghost" id="tour-play" aria-pressed="false">⏵ Automático</button>
+                <button type="button" class="btn btn-primary" id="tour-prox">Próximo →</button>
+              </div>
+              <ol class="tour-capitulos" id="tour-capitulos" aria-label="Capítulos do tour"></ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= 1. PRIMEIROS PASSOS ======================= -->
+        <section id="primeiros-passos" class="m-sec" data-busca="instalar baixar criar conta cadastro e-mail código confirmar idade 18 permissões perfil primeiro acesso google play apk">
+          <div class="m-sec-cab"><span class="m-num">1</span><div><h2>Primeiros passos</h2><p>Baixar, criar a conta, confirmar a idade e entrar no mar.</p></div></div>
+
+          <h3>Baixar e instalar</h3>
+          <div class="m-cards4">
+            <div class="m-card"><b>Google Play (Android)</b><p>O jeito recomendado: atualiza sozinho e é o único que confirma a idade. Enquanto o app está em teste, peça acesso no grupo da comunidade e toque em <i>Tornar-se testador</i>.</p></div>
+            <div class="m-card"><b>APK (Android)</b><p>Instalação direta pelo site. O celular pede para permitir instalar pelo navegador. Para a confirmação de idade, use a versão da Google Play.</p></div>
+            <div class="m-card"><b>Windows</b><p>Baixe o <code>.exe</code> e execute. Se o SmartScreen avisar, toque em <i>Mais informações › Executar assim mesmo</i>.</p></div>
+            <div class="m-card"><b>Linux</b><p>Instale o <code>.deb</code> pela central de programas ou com <code>sudo apt install ./bluxxy.deb</code>.</p></div>
+          </div>
+          <p><a href="index.html#download">Ir para a página de download →</a></p>
+
+          <h3>Criar a conta</h3>
+          <div class="m-duo">
+            <figure class="cel" data-tela="cel-entrar"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-entrar.webp" alt="Tela de entrar no BLUXXY com e-mail e senha" loading="lazy" width="585" height="1266" /></div></div><figcaption>Tela de entrada</figcaption></figure>
+            <div>
+              <ol class="m-passos">
+                <li><b>Criar conta</b> com e-mail e senha (ou <b>Continuar com Google</b> no Android). A senha precisa ter pelo menos 8 caracteres.</li>
+                <li><b>Confirme o e-mail</b>: chega um código de 6 números. Digite no app.</li>
+                <li><b>Aceite os termos</b> e a política de privacidade. Dados de saúde e identidade são sempre opcionais.</li>
+                <li><b>Permissões</b>: só a localização aproximada é obrigatória (veja a seção <a href="#permissoes">Permissões</a>).</li>
+                <li><b>Confirme que tem 18 anos ou mais</b> pela Google Play (abaixo).</li>
+                <li><b>Complete o perfil</b>: nome, data de nascimento e, se quiser, uma foto. Pronto: você está no mar!</li>
+              </ol>
+              <ol class="pontos" data-para="cel-entrar">
+                <li data-k="email"><b>E-mail e senha</b> — os mesmos no celular e no computador.</li>
+                <li data-k="entrar"><b>Entrar</b> — se esquecer a senha, use <i>Esqueci minha senha</i> logo abaixo.</li>
+              </ol>
+            </div>
+          </div>
+
+          <h3 id="idade">Confirmar 18+ (ECA Digital)</h3>
+          <div class="m-duo">
+            <div>
+              <p>O BLUXXY é <b>só para maiores de 18 anos</b>. Pela lei brasileira (ECA Digital), a idade precisa ser confirmada de forma confiável — marcar "tenho 18 anos" não vale. Por isso usamos a <b>faixa de idade da sua conta Google</b>, informada pela própria Google Play.</p>
+              <ul class="m-lista-ok">
+                <li>O BLUXXY recebe só a faixa (por exemplo, "18 ou mais"). <b>Nunca</b> a data de nascimento nem documentos.</li>
+                <li>A Google Play confirma também que o app é o oficial e que o aparelho é íntegro (Play Integrity).</li>
+                <li>Se aparecer "idade só declarada", confirme a idade na sua conta Google (documento, cartão de crédito ou identidade digital) pelo botão <b>Confirmar idade na conta Google</b> e tente de novo.</li>
+                <li>No computador, a confirmação é feita uma vez no app Android; depois é só entrar pelo QR Code.</li>
+              </ul>
+              <ol class="pontos" data-para="cel-idade">
+                <li data-k="play"><b>Confirmar pela Google Play</b> — abre a janela da Play pedindo para compartilhar a faixa de idade.</li>
+              </ol>
+            </div>
+            <figure class="cel" data-tela="cel-idade"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-idade.webp" alt="Tela de confirmar 18 anos ou mais pela Google Play" loading="lazy" width="585" height="1266" /></div></div><figcaption>Confirmação de idade</figcaption></figure>
+          </div>
+
+          <div class="m-dica"><b>💡 Dica:</b> no primeiro acesso o app oferece um <b>tour de 1 minuto</b>. Você pode pular e rever depois em <i>Ajustes de Perfil › Ajuda › Fazer o tour</i>.</div>
+        </section>
+
+        <!-- ======================= 2. COMPUTADOR ======================= -->
+        <section id="computador" class="m-sec" data-busca="computador desktop windows linux qr code entrar pc">
+          <div class="m-sec-cab"><span class="m-num">2</span><div><h2>No computador</h2><p>O mesmo mar, em tela grande. Você entra lendo um QR Code com o celular.</p></div></div>
+          <figure class="pc"><div class="pc-moldura"><img src="assets/manual/pc-inicio.webp" alt="BLUXXY no computador: menu lateral à esquerda e o mar com o radar" loading="lazy" width="1366" height="800" /></div><figcaption>BLUXXY Desktop: menu à esquerda, o mar no centro.</figcaption></figure>
+          <ol class="m-passos">
+            <li>Abra o BLUXXY no computador: aparece um <b>QR Code</b> que vale por 3 minutos.</li>
+            <li>No celular, vá em <i>Ajustes de Perfil › Conta e segurança › Entrar no computador</i> e toque em <b>Ler QR</b>.</li>
+            <li>Aponte para a tela e confirme. O computador entra sozinho, com uma sessão própria guardada no cofre do sistema.</li>
+          </ol>
+          <p>Tudo o que você faz no computador aparece no celular e vice-versa. As compras e o nível valem na conta, então também aparecem no computador. Para gravar áudio no computador, o sistema pode pedir para liberar o microfone. Por segurança, fotos e vídeos das conversas abrem só no celular — no computador aparecem borrados.</p>
+        </section>
+
+        <!-- ======================= 3. RADAR ======================= -->
+        <section id="radar" class="m-sec" data-busca="início inicio mar radar ligar desligar mapa barco ilhas distância milhas região notificações ancorar voltar">
+          <div class="m-sec-cab"><span class="m-num">3</span><div><h2>Início: o mar e o radar</h2><p>A tela principal. Barcos são pessoas, ilhas são grupos.</p></div></div>
+          <div class="m-duo">
+            <figure class="cel" data-tela="cel-inicio"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-inicio.webp" alt="Tela Início com o mar, barcos e ilhas e o radar ligado" loading="lazy" width="585" height="1266" /></div></div><figcaption>Toque nos números ⓘ</figcaption></figure>
+            <div>
+              <ol class="pontos" data-para="cel-inicio">
+                <li data-k="regiao"><b>Região</b> — sua cidade/área aproximada. Toque para trocar (pelo GPS ou escolhendo o município).</li>
+                <li data-k="notif"><b>Notificações</b> — ondas, mensagens, pedidos e avisos das ilhas.</li>
+                <li data-k="abas"><b>Radar · Explorar · Modo fantasma</b> — as três abas do Início.</li>
+                <li data-k="radar"><b>Ligar / Desligar radar</b> — com o radar desligado, só você e a sua ilha aparecem no mar.</li>
+                <li data-k="mapa"><b>O mar</b> — arraste para navegar, use + e − para zoom. Toque num barco para ver a pessoa, numa ilha para ver o grupo. O seu barco navega até lá desviando das ilhas.</li>
+                <li data-k="barco"><b>Seu barco</b> — a embarcação que você escolheu e o alcance do radar em milhas náuticas (mn).</li>
+                <li data-k="ancorar"><b>Ancorar</b> — para o barco onde está. <b>Voltar à sua ilha</b> leva você de volta.</li>
+                <li data-k="lista"><b>No seu radar</b> — a lista de embarcações e ilhas no alcance. Puxe para abrir.</li>
+                <li data-k="dock"><b>Barra de baixo</b> — Início, Praia, Atividades, Privada e Perfil.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="m-duo invertido">
+            <div>
+              <h3>A lista do radar</h3>
+              <p>Cada pessoa aparece com nome, idade, nível, embarcação e a <b>distância aproximada</b> (em degraus de 500 m). Direto da lista você manda uma <b>onda</b>, chama para conversar ou vê a pessoa no mar.</p>
+              <div class="m-dica"><b>🔒 Privacidade:</b> o radar nunca mostra coordenadas. Seu aparelho calcula uma área de ~550 m e só ela vai para o servidor.</div>
+            </div>
+            <figure class="cel" data-tela="cel-radar-lista"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-radar-lista.webp" alt="Lista No seu radar com pessoas e distâncias aproximadas" loading="lazy" width="585" height="1266" /></div></div><figcaption>No seu radar</figcaption></figure>
+          </div>
+        </section>
+
+        <!-- ======================= 4. EMBARCAÇÕES ======================= -->
+        <section id="embarcacoes" class="m-sec" data-busca="embarcação embarcacao nível nivel marinheiro navegador capitão alto marujo jet ski lancha catamarã iate alcance milhas náuticas modelos de ilha">
+          <div class="m-sec-cab"><span class="m-num">4</span><div><h2>Embarcações e níveis</h2><p>Quanto maior a embarcação, mais longe o seu radar alcança.</p></div></div>
+          <div class="m-niveis">
+            <div class="m-nivel"><span class="m-nivel-ic">🛥</span><b>Marinheiro(a)</b><small>Jet ski</small><em>5 mn</em><p>Ilha 1 · Lagoa</p></div>
+            <div class="m-nivel"><span class="m-nivel-ic">🚤</span><b>Navegador(a)</b><small>Lancha</small><em>10 mn</em><p>Ilha 2 · Píer</p></div>
+            <div class="m-nivel"><span class="m-nivel-ic">⛵</span><b>Capitão / Capitã</b><small>Catamarã</small><em>20 mn</em><p>Ilha 3 · Montanha</p></div>
+            <div class="m-nivel"><span class="m-nivel-ic">🛳</span><b>Alto Marujo / Maruja</b><small>Iate</small><em>50 mn</em><p>Ilha 4 · Floresta</p></div>
+          </div>
+          <ul class="m-lista-ok">
+            <li>Todo mundo ganha <b>+5 mn de bônus grátis</b>. Itens pagos (Mar Aberto, Maré cheia) somam mais alcance — veja <a href="#pagamentos">Planos</a>.</li>
+            <li>O <b>nível</b> libera embarcações e modelos de ilha maiores. Você pode navegar com uma embarcação menor se quiser um radar mais local.</li>
+            <li>Troque em <i>Ajustes de Perfil › Alcance do radar e nível</i> ou tocando no chip <b>Seu barco</b> no mar.</li>
+            <li>1 milha náutica = 1,852 km. 5 mn ≈ 9 km · 10 mn ≈ 18,5 km · 20 mn ≈ 37 km · 50 mn ≈ 93 km.</li>
+          </ul>
+          <figure class="cel mini" data-tela="cel-alcance"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-alcance.webp" alt="Ajustes de alcance do radar e embarcação" loading="lazy" width="585" height="1266" /></div></div><figcaption>Alcance do radar e nível</figcaption></figure>
+        </section>
+
+        <!-- ======================= 5. CARTÃO ======================= -->
+        <section id="cartao" class="m-sec" data-busca="cartão cartao tripulante perfil de outra pessoa onda chamar conversar puxar assunto bloquear denunciar salvar ver no mar selo verificado fotos privadas maré do dia">
+          <div class="m-sec-cab"><span class="m-num">5</span><div><h2>Cartão do tripulante</h2><p>O que aparece quando você toca numa pessoa.</p></div></div>
+          <div class="m-trio">
+            <figure class="cel" data-tela="cel-cartao"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-cartao.webp" alt="Cartão do tripulante com foto ou avatar, selo e perguntas" loading="lazy" width="585" height="1266" /></div></div><figcaption>Topo do cartão</figcaption></figure>
+            <figure class="cel" data-tela="cel-cartao-2"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-cartao-2.webp" alt="Ações do cartão: onda, conversar, bloquear e denunciar" loading="lazy" width="585" height="1266" /></div></div><figcaption>Ações</figcaption></figure>
+            <div>
+              <ol class="pontos" data-para="cel-cartao">
+                <li data-k="fotos"><b>Fotos e avatar</b> — deslize para ver as fotos públicas. Sem foto, aparece o avatar desenhado da pessoa.</li>
+                <li data-k="verif"><b>Selo azul</b> — perfil verificado por selfie pela equipe BLUXXY.</li>
+                <li data-k="online"><b>Online</b> — ou "visto há…", se a pessoa permitir.</li>
+                <li data-k="mare"><b>Ver a Maré do dia</b> — aparece quando ela postou algo nas últimas 24 h.</li>
+                <li data-k="respostas"><b>Perguntas do perfil</b> — respostas para puxar assunto.</li>
+              </ol>
+              <ol class="pontos" data-para="cel-cartao-2">
+                <li data-k="puxar"><b>Puxar assunto</b> — manda um pedido de conversa já com uma mensagem sobre aquela resposta.</li>
+                <li data-k="onda"><b>Onda 🌊</b> — um "oi, curti você". Se a onda voltar, vira conexão.</li>
+                <li data-k="salvar"><b>Salvar (💎)</b> — guarda a pessoa em <i>Navegadores salvos</i>.</li>
+                <li data-k="chat"><b>Chamar para conversar / Abrir conversa</b> — com conexão a conversa abre direto; sem conexão, vira um pedido.</li>
+                <li data-k="mar"><b>Ver no mar</b> — mostra o barco da pessoa no mapa.</li>
+                <li data-k="bloq"><b>Bloquear</b> — vocês somem um para o outro em todo o app.</li>
+                <li data-k="denun"><b>Denunciar</b> — vai para a equipe de moderação, com prioridade para casos graves.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="m-dica"><b>🔐 Fotos privadas:</b> se a pessoa tiver fotos privadas, aparece um cadeado com a quantidade. Elas só abrem quando ela libera para você pela conversa.</div>
+        </section>
+
+        <!-- ======================= 6. ONDAS ======================= -->
+        <section id="ondas" class="m-sec" data-busca="onda ondas conexão conexões recebidas enviadas retirar devolver match">
+          <div class="m-sec-cab"><span class="m-num">6</span><div><h2>Ondas e conexões</h2><p>O jeito BLUXXY de dizer "curti você".</p></div></div>
+          <div class="m-duo">
+            <div>
+              <div class="m-fluxo">
+                <div><span>🌊</span><b>Você manda uma onda</b><small>Só a pessoa fica sabendo.</small></div>
+                <i>→</i>
+                <div><span>🌊</span><b>Ela devolve</b><small>…ou não. Sem pressão.</small></div>
+                <i>→</i>
+                <div><span>🤝</span><b>Conexão!</b><small>A conversa abre sozinha na Praia privada.</small></div>
+              </div>
+              <ul class="m-lista-ok">
+                <li><b>Recebidas</b>: quem mandou onda para você. Toque em <b>Devolver</b> para conectar.</li>
+                <li><b>Enviadas</b>: as suas ondas. Mudou de ideia? <b>Retirar</b> desfaz.</li>
+                <li>Desfazer uma conexão encerra a conversa para os dois.</li>
+              </ul>
+              <ol class="pontos" data-para="cel-ondas">
+                <li data-k="abas"><b>Recebidas</b> — ondas que chegaram para você.</li>
+                <li data-k="enviadas"><b>Enviadas</b> — as ondas que você mandou.</li>
+              </ol>
+            </div>
+            <figure class="cel" data-tela="cel-ondas"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-ondas.webp" alt="Tela Suas ondas com recebidas, enviadas e conexões" loading="lazy" width="585" height="1266" /></div></div><figcaption>Suas ondas</figcaption></figure>
+          </div>
+        </section>
+
+        <!-- ======================= 7. EXPLORAR / FANTASMA ======================= -->
+        <section id="explorar" class="m-sec" data-busca="explorar pessoas por perto filtros busca modo fantasma invisível esconder">
+          <div class="m-sec-cab"><span class="m-num">7</span><div><h2>Explorar e modo fantasma</h2><p>Descobrir gente nova — ou navegar sem ser visto.</p></div></div>
+          <div class="m-trio dois">
+            <figure class="cel" data-tela="cel-explorar"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-explorar.webp" alt="Aba Explorar com pessoas por perto e filtros" loading="lazy" width="585" height="1266" /></div></div><figcaption>Explorar</figcaption></figure>
+            <figure class="cel" data-tela="cel-fantasma"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-fantasma.webp" alt="Aba Modo fantasma com o botão de ativar" loading="lazy" width="585" height="1266" /></div></div><figcaption>Modo fantasma</figcaption></figure>
+            <div>
+              <h3>Explorar</h3>
+              <p>Grade de pessoas por perto com filtros: <b>Todos</b>, <b>Online agora</b>, <b>Novos perfis</b> e <b>Em comum</b>, além de busca por nome ou interesse e filtros de idade, corpo e posição.</p>
+              <h3>Modo fantasma</h3>
+              <p>Ligado, você <b>some do radar</b> e das buscas dos outros, mas continua vendo o mar. Suas conversas continuam normais. Desligue quando quiser voltar a aparecer.</p>
+              <ol class="pontos" data-para="cel-fantasma"><li data-k="botao"><b>Ativar modo fantasma</b> — um toque liga, outro desliga.</li></ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= 8. PRAIA ======================= -->
+        <section id="praia" class="m-sec" data-busca="praia publicação publicar post feed seguir seguindo curtir repostar maré do dia stories 24 horas foto vídeo cidade">
+          <div class="m-sec-cab"><span class="m-num">8</span><div><h2>Praia e Maré do dia</h2><p>O feed público do BLUXXY.</p></div></div>
+          <div class="m-trio">
+            <figure class="cel" data-tela="cel-praia"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-praia.webp" alt="Praia: Maré do dia no topo, caixa de publicar e o feed" loading="lazy" width="585" height="1266" /></div></div><figcaption>Praia</figcaption></figure>
+            <figure class="cel" data-tela="cel-mare-dia"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-mare-dia.webp" alt="Maré do dia aberta em tela cheia" loading="lazy" width="585" height="1266" /></div></div><figcaption>Maré do dia</figcaption></figure>
+            <div>
+              <ol class="pontos" data-para="cel-praia">
+                <li data-k="mares"><b>Maré do dia</b> — fotos e textos que somem em 24 h. Toque em <b>Sua maré (+)</b> para postar; o anel colorido indica maré nova.</li>
+                <li data-k="busca"><b>Buscar</b> pessoas ou publicações.</li>
+                <li data-k="cidade"><b>Filtrar por cidade</b>.</li>
+                <li data-k="texto"><b>O que está rolando</b> — escreva, anexe foto ou vídeo.</li>
+                <li data-k="vis"><b>Quem pode ver</b> — todos ou só quem segue você.</li>
+                <li data-k="publicar"><b>Publicar</b>.</li>
+                <li data-k="feed"><b>Feed</b> — curtir, comentar, repostar e salvar. Abas <i>Publicações · Seguindo · Perfil</i> no topo.</li>
+              </ol>
+              <h3>Maré do dia</h3>
+              <ul class="m-lista-ok">
+                <li>Quem vê: suas <b>conexões</b> e quem segue você.</li>
+                <li>Toque na direita para avançar e na esquerda para voltar. Cada item fica 6 segundos.</li>
+                <li>Na sua maré, <b>Quem viu</b> mostra quem assistiu, e dá para apagar antes das 24 h.</li>
+                <li>Até 15 marés por dia. Texto sobre fundo colorido (8 cores) ou foto.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="m-dica"><b>👁 Perfil de praia privado:</b> em <i>Ajustes de Perfil › Privacidade</i> você faz que só quem você aceitar como seguidor veja suas publicações.</div>
+        </section>
+
+        <!-- ======================= 9. ATIVIDADES ======================= -->
+        <section id="atividades" class="m-sec" data-busca="atividades notificações visitas ao perfil quem visitou pedidos seguidores curtidas">
+          <div class="m-sec-cab"><span class="m-num">9</span><div><h2>Atividades</h2><p>Tudo o que aconteceu com você.</p></div></div>
+          <div class="m-duo">
+            <figure class="cel" data-tela="cel-atividades"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-atividades.webp" alt="Atividades com pedido de conversa para aceitar ou recusar" loading="lazy" width="585" height="1266" /></div></div><figcaption>Atividades</figcaption></figure>
+            <div>
+              <ul class="m-lista-ok">
+                <li><b>Atividade</b>: curtidas, repostagens, respostas, novos seguidores e <b>pedidos</b> (para seguir ou conversar). Aceite ou recuse direto daqui.</li>
+                <li><b>Visitas ao perfil</b>: quem passou pelo seu cartão. Você também aparece nas visitas dos outros — desligue em <i>Privacidade › Aparecer nas visitas</i>.</li>
+                <li><b>Suas ondas</b>: recebidas, enviadas e conexões (veja <a href="#ondas">Ondas</a>).</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= 10. CONVERSAS ======================= -->
+        <section id="conversas" class="m-sec" data-busca="conversa conversas chat mensagem privada áudio audio gravar microfone reação emoji foto vídeo visualização única digitando lida pedido conversar navegadores salvos">
+          <div class="m-sec-cab"><span class="m-num">10</span><div><h2>Praia privada: conversas</h2><p>Mensagens 1:1 com quem é sua conexão.</p></div></div>
+          <div class="m-trio">
+            <figure class="cel" data-tela="cel-conversas"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-conversas.webp" alt="Lista de conversas com convite para conversar" loading="lazy" width="585" height="1266" /></div></div><figcaption>Conversas e convites</figcaption></figure>
+            <figure class="cel" data-tela="cel-conversa"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-conversa.webp" alt="Conversa aberta com mensagens, reação e áudio" loading="lazy" width="585" height="1266" /></div></div><figcaption>Conversa aberta</figcaption></figure>
+            <div>
+              <ol class="pontos" data-para="cel-conversas">
+                <li data-k="convites"><b>Convites para conversar</b> — ✓ aceita, ✕ recusa. Quem "puxou assunto" já chega com a mensagem.</li>
+                <li data-k="abas"><b>Conversas</b> e <b>Ilhas</b> — as duas listas da Praia privada.</li>
+                <li data-k="cota"><b>Cota de mídia</b> — quantos vídeos e fotos você ainda pode abrir hoje.</li>
+              </ol>
+              <ol class="pontos" data-para="cel-conversa">
+                <li data-k="opcoes"><b>Opções</b> — liberar fotos privadas, apagar a conversa, bloquear ou denunciar.</li>
+                <li data-k="msgs"><b>Mensagens</b> — ✓ enviada, ✓✓ lida. Toque duas vezes (ou segure) numa mensagem para reagir: ❤️ 😂 😮 😢 🔥 👍.</li>
+                <li data-k="anexo"><b>Anexar</b> — foto ou vídeo de <b>visualização única</b>: abre uma vez e some.</li>
+                <li data-k="caixa"><b>Escreva</b> — a outra pessoa vê "digitando…".</li>
+                <li data-k="mic"><b>Áudio</b> — toque para gravar (até 2 min) e toque de novo para enviar. <kbd>Esc</kbd> cancela no computador.</li>
+                <li data-k="enviar"><b>Enviar</b>.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="m-dica"><b>🛡 Capturas de tela:</b> por segurança, o app pode bloquear prints e gravação de tela nas conversas e nas mídias (no Android, o print sai preto).</div>
+        </section>
+
+        <!-- ======================= 11. ILHAS ======================= -->
+        <section id="ilhas" class="m-sec" data-busca="ilha ilhas grupo cidade praça pública criar ilha comprar convite código entrada aberta pedido farol imagem modelo admins membros encontro evento banir">
+          <div class="m-sec-cab"><span class="m-num">11</span><div><h2>Ilhas</h2><p>Os grupos do BLUXXY: a praça da sua cidade e as ilhas criadas pela comunidade.</p></div></div>
+          <div class="m-duas-col">
+            <div class="m-card destaque">
+              <b>🏙 Ilha da cidade — praça pública</b>
+              <ul>
+                <li>Existe uma para cada município, <b>sem dono</b>. Ninguém destrói, reseta ou expulsa.</li>
+                <li>Quem está na cidade entra com <b>um toque</b> (botão <i>Entrar</i>).</li>
+                <li>As mensagens <b>somem sozinhas depois de 7 dias</b>, uma a uma.</li>
+                <li>Quem tem o <b>selo de verificado</b> pode marcar encontros.</li>
+                <li>Moderação pela equipe BLUXXY: denuncie pelo cartão da pessoa.</li>
+              </ul>
+            </div>
+            <div class="m-card destaque">
+              <b>🏝 Ilha própria</b>
+              <ul>
+                <li>Você cria com o <b>Direito de criar ilha</b> (compra única, veja <a href="#pagamentos">Pagamentos</a>).</li>
+                <li><b>Entrada</b>: <i>aberta</i> (entra direto) ou <i>por pedido</i> (você ou um admin aprova).</li>
+                <li>Aparece no radar de quem está no alcance, com o <b>farol aceso</b>.</li>
+                <li><b>Convite</b>: um código para chamar gente de qualquer lugar — você troca ou desliga quando quiser.</li>
+                <li>Admins, banimentos, encontros e a <b>imagem da ilha</b> (Lagoa, Píer, Montanha, Floresta) conforme o seu nível.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="m-trio quatro">
+            <figure class="cel" data-tela="cel-ilhas"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-ilhas.webp" alt="Lista de ilhas: a ilha da cidade e a sua ilha" loading="lazy" width="585" height="1266" /></div></div><figcaption>Lista de ilhas</figcaption></figure>
+            <figure class="cel" data-tela="cel-ilha-chat"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-ilha-chat.webp" alt="Conversa em grupo de uma ilha" loading="lazy" width="585" height="1266" /></div></div><figcaption>Chat da ilha</figcaption></figure>
+            <figure class="cel" data-tela="cel-ilha-gestao"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-ilha-gestao.webp" alt="Gestão da ilha: membros, pedidos, ajustes e encontros" loading="lazy" width="585" height="1266" /></div></div><figcaption>Gestão</figcaption></figure>
+            <figure class="cel" data-tela="cel-ilha-ajustes"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-ilha-ajustes.webp" alt="Ajustes da ilha: convite e imagem da ilha" loading="lazy" width="585" height="1266" /></div></div><figcaption>Convite e imagem</figcaption></figure>
+          </div>
+          <div class="m-pontos-col">
+            <ol class="pontos" data-para="cel-ilhas">
+              <li data-k="cidade"><b>Ilha da sua cidade</b> — selo CIDADE; a imagem é um dos 4 modelos de ilha.</li>
+              <li data-k="codigo"><b>Entrar com código</b> — use o convite que o dono de uma ilha mandou.</li>
+            </ol>
+            <ol class="pontos" data-para="cel-ilha-chat">
+              <li data-k="gestao"><b>Gerenciar</b> — membros, pedidos, ajustes, encontros, sair.</li>
+              <li data-k="msgs"><b>Mensagens do grupo</b> — avisos do sistema aparecem em itálico (entradas, encontros).</li>
+            </ol>
+            <ol class="pontos" data-para="cel-ilha-gestao">
+              <li data-k="membros"><b>Membros</b> — tornar admin, remover ou banir (dono e admins).</li>
+              <li data-k="pedidos"><b>Pedidos</b> — aprovar quem pediu para entrar.</li>
+              <li data-k="ajustes"><b>Ajustes</b> — nome, descrição, entrada, convite, imagem e farol.</li>
+              <li data-k="eventos"><b>Encontros</b> — marque data, hora e local; os membros respondem <i>Vou</i> ou <i>Talvez</i>.</li>
+              <li data-k="destruir"><b>Destruir ilha</b> — só o dono, só na ilha própria.</li>
+            </ol>
+            <ol class="pontos" data-para="cel-ilha-ajustes">
+              <li data-k="convite"><b>Convite</b> — Enviar, Trocar (o antigo para de valer) ou Desligar.</li>
+              <li data-k="modelos"><b>Imagem da ilha</b> — vira a foto do grupo nas listas e no mar.</li>
+              <li data-k="farol"><b>Farol</b> — apagado, a ilha some do radar dos outros.</li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- ======================= 12. PERFIL ======================= -->
+        <section id="perfil" class="m-sec" data-busca="perfil ajustes foto avatar bio perguntas fotos privadas verificação selo azul selfie oceanos procura identidade gênero orientação corpo pele saúde notificações bloqueios conta excluir completo">
+          <div class="m-sec-cab"><span class="m-num">12</span><div><h2>Seu perfil</h2><p>Em <i>Ajustes de Perfil</i>, cada seção abre e fecha. Um perfil completo recebe muito mais ondas.</p></div></div>
+          <div class="m-trio">
+            <figure class="cel" data-tela="cel-perfil"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-perfil.webp" alt="Ajustes de Perfil com foto, nível e progresso do perfil" loading="lazy" width="585" height="1266" /></div></div><figcaption>Topo do perfil</figcaption></figure>
+            <figure class="cel" data-tela="cel-perguntas"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-perguntas.webp" alt="Perguntas do perfil para puxar assunto" loading="lazy" width="585" height="1266" /></div></div><figcaption>Perguntas</figcaption></figure>
+            <div>
+              <ol class="pontos" data-para="cel-perfil">
+                <li data-k="foto"><b>Sua foto</b> — toque para ver ou trocar. Recorte redondo automático.</li>
+                <li data-k="nivel"><b>Nível e embarcação</b>.</li>
+                <li data-k="completo"><b>Seu perfil está X% completo</b> — atalhos para o que falta.</li>
+                <li data-k="ajuda"><b>Ajuda</b> — refazer o tour ou abrir este manual.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="m-grade">
+            <div class="m-card"><b>📷 Fotos</b><p>Até 3 fotos públicas e 6 <b>privadas</b> (só abrem para quem você liberar na conversa). Capa do perfil de praia separada.</p></div>
+            <div class="m-card"><b>🎨 Avatar</b><p>Seu boneco desenhado: rosto, cabelo, roupa, acessórios e tom de pele pela escala de Fitzpatrick. Aparece quando você não tem foto.</p></div>
+            <div class="m-card"><b>💬 Perguntas</b><p>Até 3 respostas (de 10 perguntas) para os outros tocarem em <b>Puxar assunto</b>.</p></div>
+            <div class="m-card"><b>✅ Selo de verificado</b><p>Tire uma selfie fazendo o gesto sorteado. A equipe compara com suas fotos, aprova e <b>apaga a selfie</b>. O selo azul aparece no seu cartão.</p></div>
+            <div class="m-card"><b>🌊 Oceanos</b><p>Atlântico, Pacífico, Índico… são os seus grupos de identidade e preferência. Você escolhe onde busca e quem pode te encontrar.</p></div>
+            <div class="m-card"><b>🧍 Corpo e identidade</b><p>Gênero, sexo, orientação, corpo e posição — cada item com a opção de mostrar ou esconder.</p></div>
+            <div class="m-card"><b>❤️ Saúde</b><p>PrEP, Doxy-PEP e sorologia: totalmente opcionais e só aparecem se você quiser.</p></div>
+            <div class="m-card"><b>🔔 Notificações</b><p>Escolha o que avisa: ondas, mensagens, ilhas. Com o app fechado, o aviso mostra só o nome, nunca o conteúdo.</p></div>
+            <div class="m-card"><b>⛔ Bloqueios e denúncias</b><p>Veja e desfaça bloqueios e acompanhe suas denúncias.</p></div>
+            <div class="m-card"><b>🗑 Conta</b><p>E-mail, senha (o código de troca chega por e-mail), sessões, entrar no computador e <b>excluir a conta</b> (também pelo site, em <a href="excluir-conta.html">excluir conta</a>).</p></div>
+          </div>
+          <figure class="pc"><div class="pc-moldura"><img src="assets/manual/pc-perfil.webp" alt="Ajustes de Perfil no computador" loading="lazy" width="1366" height="800" /></div><figcaption>Ajustes de Perfil no computador.</figcaption></figure>
+        </section>
+
+        <!-- ======================= 13. PRIVACIDADE ======================= -->
+        <section id="privacidade" class="m-sec" data-busca="privacidade segurança localização distância aproximada visibilidade online visitas idade bloquear denunciar dados lgpd prints captura">
+          <div class="m-sec-cab"><span class="m-num">13</span><div><h2>Privacidade e segurança</h2><p>Você decide o que mostrar — e o app protege o resto.</p></div></div>
+          <div class="m-duo">
+            <div>
+              <ul class="m-lista-ok">
+                <li><b>Localização aproximada</b>: o aparelho calcula uma área de ~550 m; a posição exata nunca sai do celular. Distâncias em degraus de 500 m.</li>
+                <li><b>Aparecer no radar</b>, <b>mostrar distância</b>, <b>online</b>, <b>idade</b> e <b>aparecer nas visitas</b>: cada um tem a sua chave.</li>
+                <li><b>Perfil de praia privado</b>: só seguidores aceitos veem suas publicações.</li>
+                <li><b>Modo fantasma</b>: some do radar com um toque.</li>
+                <li><b>Bloquear</b>: vocês deixam de existir um para o outro. <b>Denunciar</b>: casos graves têm prioridade máxima.</li>
+                <li><b>Proteção contra prints</b> nas conversas e mídias (Android e Windows).</li>
+                <li><b>Mídia de visualização única</b> e limite diário de aberturas.</li>
+                <li><b>Notificações discretas</b>: sem o conteúdo da mensagem.</li>
+              </ul>
+              <p>Mais detalhes na <a href="privacidade.html">Política de Privacidade</a> e nas <a href="diretrizes.html">Diretrizes da comunidade</a>.</p>
+            </div>
+            <figure class="cel" data-tela="cel-privacidade"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-privacidade.webp" alt="Ajustes de privacidade e localização" loading="lazy" width="585" height="1266" /></div></div><figcaption>Privacidade e localização</figcaption></figure>
+          </div>
+        </section>
+
+        <!-- ======================= 14. PERMISSÕES ======================= -->
+        <section id="permissoes" class="m-sec" data-busca="permissões permissao localização câmera camera microfone áudio notificações arquivos galeria fotos android configurações negado">
+          <div class="m-sec-cab"><span class="m-num">14</span><div><h2>Permissões do celular</h2><p>O BLUXXY só pede o que usa, na hora de usar.</p></div></div>
+          <div class="m-duo">
+            <figure class="cel" data-tela="cel-permissoes"><div class="cel-moldura"><div class="cel-tela"><img src="assets/manual/cel-permissoes.webp" alt="Tela de permissões do primeiro acesso" loading="lazy" width="585" height="1266" /></div></div><figcaption>Permissões no primeiro acesso</figcaption></figure>
+            <div>
+              <table class="m-tabela">
+                <thead><tr><th>Permissão</th><th>Para quê</th><th></th></tr></thead>
+                <tbody>
+                  <tr><td>📍 Localização aproximada</td><td>Achar sua cidade e quem está por perto (~550 m, nunca a posição exata).</td><td><span class="tag obr">obrigatória</span></td></tr>
+                  <tr><td>🔔 Notificações</td><td>Avisos de mensagens, ondas e pedidos com o app fechado.</td><td><span class="tag">opcional</span></td></tr>
+                  <tr><td>📷 Câmera</td><td>Fotos, selfie do selo de verificado e Maré do dia.</td><td><span class="tag">opcional</span></td></tr>
+                  <tr><td>🎙 Microfone</td><td>Mensagens de áudio (só enquanto você grava).</td><td><span class="tag">opcional</span></td></tr>
+                  <tr><td>🖼 Fotos e arquivos</td><td>Escolher da galeria. No Android 13+ usa o seletor do sistema e não precisa de permissão.</td><td><span class="tag">opcional</span></td></tr>
+                </tbody>
+              </table>
+              <ol class="pontos" data-para="cel-permissoes">
+                <li data-k="local"><b>Usar minha localização</b> — define a sua região.</li>
+                <li data-k="notif"><b>Permitir notificações</b>.</li>
+                <li data-k="camera"><b>Permitir câmera</b>.</li>
+                <li data-k="mic"><b>Permitir microfone</b>.</li>
+              </ol>
+              <div class="m-dica"><b>⚙️ Negou sem querer?</b> Em <i>Ajustes de Perfil › Permissões do celular</i> cada item mostra <b>Permitido</b>, <b>Não perguntado</b> ou <b>Negado</b>, com o botão <b>Permitir</b> ou <b>Abrir ajustes</b> (leva direto às configurações do Android).</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= 15. PAGAMENTOS ======================= -->
+        <section id="pagamentos" class="m-sec" data-busca="pagamento pagamentos planos preço preços assinatura mar aberto maré cheia direito de criar ilha apoio pix google play cancelar reembolso restaurar compras cobrança">
+          <div class="m-sec-cab"><span class="m-num">15</span><div><h2>Planos e pagamentos</h2><p>O BLUXXY é gratuito. Os extras são opcionais.</p></div></div>
+          <div class="m-planos">
+            <div class="m-plano"><small>Grátis</small><b>R$ 0</b><ul><li>Radar, ilhas, conversas e Praia</li><li>+5 mn de alcance de bônus</li><li>Sem anúncios</li></ul></div>
+            <div class="m-plano top"><small>Assinatura</small><span class="m-plano-nome">Mar Aberto</span><b>R$ 9,90<i>/mês</i></b><p class="m-plano-alt">ou R$ 79,90 por ano</p><ul><li>+25 mn de alcance no radar</li><li>Selo Mar Aberto no perfil</li><li>Cancele quando quiser</li></ul></div>
+            <div class="m-plano"><small>Avulso</small><span class="m-plano-nome">Maré cheia</span><b>R$ 2,90<i>/24 h</i></b><ul><li>+20 mn de alcance</li><li>Vale por 24 horas</li><li>Compre de novo quando acabar</li></ul></div>
+            <div class="m-plano"><small>Avulso</small><span class="m-plano-nome">Direito de criar ilha</span><b>R$ 14,90</b><ul><li>Uma ilha sua, para sempre</li><li>Convite, admins e encontros</li></ul></div>
+            <div class="m-plano"><small>Apoio</small><span class="m-plano-nome">Apoiar o BLUXXY</span><b>R$ 5 · 10 · 20</b><ul><li>Selo de apoiador</li><li>Ajuda a manter o app no ar</li></ul></div>
+          </div>
+          <div class="m-calc" id="m-calc" aria-label="Simulador de alcance">
+            <b>Simule o seu alcance</b>
+            <div class="m-calc-lin">
+              <label>Embarcação
+                <select id="calc-barco"><option value="5">Jet ski (5 mn)</option><option value="10">Lancha (10 mn)</option><option value="20">Catamarã (20 mn)</option><option value="50">Iate (50 mn)</option></select></label>
+              <label><input type="checkbox" id="calc-mar" /> Mar Aberto (+25)</label>
+              <label><input type="checkbox" id="calc-mare" /> Maré cheia (+20)</label>
+            </div>
+            <div class="m-calc-res"><span id="calc-mn">10</span> mn <small>≈ <span id="calc-km">18,5</span> km de raio</small></div>
+            <div class="m-calc-barra"><i id="calc-barra"></i></div>
+          </div>
+          <h3>Como pagar</h3>
+          <ol class="m-passos">
+            <li>Os itens pagos ficam no app <b>Android instalado pela Google Play</b>, em <i>Ajustes de Perfil › Loja</i>.</li>
+            <li>O pagamento é feito <b>pela própria Google Play</b> (cartão, Pix, saldo ou boleto, conforme a sua conta). O BLUXXY não vê os dados do seu cartão.</li>
+            <li>O benefício entra na hora e vale <b>na conta</b>: aparece também no computador.</li>
+          </ol>
+          <div class="m-duas-col">
+            <div class="m-card"><b>🔁 Cancelar a assinatura</b><p>Na Google Play: <i>Perfil › Pagamentos e assinaturas › Assinaturas › BLUXXY › Cancelar</i>. Você continua com o Mar Aberto até o fim do período já pago.</p></div>
+            <div class="m-card"><b>💸 Reembolso</b><p>Pedidos de reembolso seguem as regras da Google Play (normalmente pelo próprio site da Play, logo após a compra). Algum problema? Escreva para <a href="mailto:contato@bluxxy.com">contato@bluxxy.com</a>.</p></div>
+            <div class="m-card"><b>📲 Trocou de celular?</b><p>As compras ficam na sua conta BLUXXY e na sua conta Google. Entre de novo e elas voltam sozinhas.</p></div>
+            <div class="m-card"><b>💙 Pix</b><p>Doações por Pix no <a href="index.html#apoie">site</a> ajudam a manter o servidor, mas <b>não liberam itens no app</b>. Para itens, use a Google Play.</p></div>
+          </div>
+          <p class="m-nota">Os valores podem mudar. Vale sempre o preço mostrado na Google Play na hora da compra.</p>
+        </section>
+
+        <!-- ======================= 16. GLOSSÁRIO ======================= -->
+        <section id="glossario" class="m-sec" data-busca="glossário glossario termos significado o que é tripulante onda conexão farol milha náutica oceano maré praia">
+          <div class="m-sec-cab"><span class="m-num">16</span><div><h2>Glossário do mar</h2><p>As palavras do BLUXXY, em poucas linhas.</p></div></div>
+          <dl class="m-glossario">
+            <div><dt>Tripulante</dt><dd>Qualquer pessoa no app.</dd></div>
+            <div><dt>Embarcação</dt><dd>Seu "barco" no mar. Define o alcance do radar.</dd></div>
+            <div><dt>Milha náutica (mn)</dt><dd>Unidade do alcance. 1 mn = 1,852 km.</dd></div>
+            <div><dt>Radar</dt><dd>Quem está no alcance da sua embarcação.</dd></div>
+            <div><dt>Onda</dt><dd>Um "oi, curti você". Duas ondas = conexão.</dd></div>
+            <div><dt>Conexão</dt><dd>Onda correspondida. Libera a conversa.</dd></div>
+            <div><dt>Ilha</dt><dd>Um grupo com chat, membros e encontros.</dd></div>
+            <div><dt>Farol</dt><dd>Aceso, a ilha aparece no radar dos outros.</dd></div>
+            <div><dt>Praia</dt><dd>O feed público. A <i>Praia privada</i> são as conversas e ilhas.</dd></div>
+            <div><dt>Maré do dia</dt><dd>Fotos e textos que somem em 24 horas.</dd></div>
+            <div><dt>Oceanos</dt><dd>Grupos de identidade e preferência que você escolhe.</dd></div>
+            <div><dt>Modo fantasma</dt><dd>Navegar sem aparecer no radar.</dd></div>
+          </dl>
+        </section>
+
+        <!-- ======================= 17. PROBLEMAS ======================= -->
+        <section id="problemas" class="m-sec" data-busca="problemas erro não funciona áudio microfone idade notificação qr code foto não carrega localização">
+          <div class="m-sec-cab"><span class="m-num">17</span><div><h2>Problemas comuns</h2><p>As soluções mais rápidas.</p></div></div>
+          <div class="m-acordeao">
+            <details><summary>"Sua conta Google tem só a idade declarada"</summary><p>Confirme a idade na sua conta Google pelo botão <b>Confirmar idade na conta Google</b> (documento, cartão de crédito ou identidade digital). Depois feche o BLUXXY, abra de novo e toque em <b>Confirmar pela Google Play</b>. A Play pode levar algumas horas para atualizar.</p></details>
+            <details><summary>"A Google Play não respondeu a consulta de idade"</summary><p>Atualize a Play Store e o Google Play Services, confira se o BLUXXY foi instalado <b>pela Google Play</b> (não pelo APK) e se está na mesma conta Google da Play.</p></details>
+            <details><summary>O áudio não grava</summary><p>Veja em <i>Ajustes de Perfil › Permissões do celular › Microfone</i>. Se estiver <b>Negado</b>, toque em <b>Abrir ajustes</b> e libere. Se outro app estiver usando o microfone (ligação, gravador), feche-o.</p></details>
+            <details><summary>Não recebo notificações com o app fechado</summary><p>Libere as notificações em <i>Permissões do celular</i> e, no Android, desative a economia de bateria para o BLUXXY.</p></details>
+            <details><summary>Ninguém aparece no radar</summary><p>Confira se o <b>radar está ligado</b>, se a <b>região</b> está certa e se o modo fantasma não está ligado. Aumente o alcance trocando de embarcação ou com Maré cheia.</p></details>
+            <details><summary>O QR Code do computador venceu</summary><p>Ele vale 3 minutos. Toque em <b>Gerar outro</b> e leia de novo com o celular.</p></details>
+            <details><summary>Não consigo entrar na ilha de outra cidade</summary><p>A ilha da cidade é para quem está nela. Para ilhas próprias fora do seu alcance, peça o <b>código de convite</b> ao dono.</p></details>
+          </div>
+        </section>
+
+        <!-- ======================= 18. FAQ ======================= -->
+        <section id="faq" class="m-sec" data-busca="perguntas frequentes faq gratuito iphone ios menor de idade excluir conta dados vendem anúncio">
+          <div class="m-sec-cab"><span class="m-num">18</span><div><h2>Perguntas frequentes</h2></div></div>
+          <div class="m-acordeao">
+            <details><summary>O BLUXXY é gratuito?</summary><p>Sim. Radar, ondas, conversas, ilhas da cidade e Praia são grátis e sem anúncios. Só os extras de alcance, a criação de ilha própria e o apoio são pagos.</p></details>
+            <details><summary>Tem para iPhone?</summary><p>Ainda não. Entre no <a href="index.html#comunidade">grupo da comunidade</a> para saber quando sair.</p></details>
+            <details><summary>Alguém consegue saber onde eu moro?</summary><p>Não. O servidor só recebe uma área de ~550 m, e as distâncias aparecem em degraus de 500 m. Com o modo fantasma, você nem aparece.</p></details>
+            <details><summary>Os meus dados são vendidos?</summary><p>Não. O BLUXXY não vende dados nem mostra anúncios. Veja a <a href="privacidade.html">Política de Privacidade</a>.</p></details>
+            <details><summary>Como excluo a minha conta?</summary><p>No app, em <i>Ajustes de Perfil › Conta e segurança › Excluir conta</i>, ou pelo site em <a href="excluir-conta.html">excluir conta</a>. Tudo é apagado do servidor.</p></details>
+            <details><summary>Vi um menor de idade ou algo grave. O que faço?</summary><p>Use <b>Denunciar</b> no cartão da pessoa e escolha o motivo. Denúncias graves entram com prioridade máxima para a equipe.</p></details>
+          </div>
+          <div class="m-fim">
+            <p>Ainda com dúvida? Fale com a gente.</p>
+            <div class="hero-actions"><a class="btn btn-primary" href="mailto:contato@bluxxy.com">✉ contato@bluxxy.com</a><a class="btn btn-ghost" href="index.html#comunidade">Comunidade</a><button class="btn btn-ghost" type="button" data-abrir-tour>▶ Rever o tour</button></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ampliar a tela -->
+  <div class="m-zoom" id="m-zoom" hidden role="dialog" aria-modal="true" aria-label="Tela ampliada">
+    <button type="button" class="m-zoom-x" aria-label="Fechar">✕</button>
+    <img id="m-zoom-img" alt="" />
+  </div>
+  <button type="button" class="m-topo" id="m-topo" aria-label="Voltar ao topo" hidden>↑</button>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand"><strong>BLUXXY</strong> — Discover your next wave</p>
+        <p>&copy; <span id="year"></span> BLUXXY · Rodolfo Viana Silva. Todos os direitos reservados.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="manual.html">Manual</a>
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+        <a href="diretrizes.html">Diretrizes</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/manual.js"></script>
+</body>
+</html>
