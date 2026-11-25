@@ -25,7 +25,7 @@ Os instaladores **não ficam neste repositório** (os arquivos passam do limite 
 
 - `BLUXXY-Setup.exe` — Windows
 - `bluxxy.deb` — Linux (Debian/Ubuntu)
-- `bluxxy.apk` — Android
+- Google Play — Android
 - `SHA256SUMS.txt` — conferência dos arquivos
 
 Para gerar e publicar tudo (instaladores + site), na pasta do projeto BLUXXY:
